@@ -12,7 +12,7 @@ library(topicmodels)
 # Load dataset
 ######################################################
 load("./data/master.id.author.Rdata")
-Data <- read.table("./data/dataset.txt", header=T, sep="?t", row.names=1)
+Data <- read.table("./data/dataset.txt", header=T, sep="\t", row.names=1)
 colnames_ <- colnames(Data)
 Data[is.na(Data)] <- 0 
 
@@ -39,4 +39,4 @@ write.table(Onin_dist, file=terms_filename, sep="?t", quote=FALSE, row.names=FAL
 # Write On-in distribution in each topic
 topics <- cbind(master.id.author["id"], master.id.author["author"], lda_inf$topics)
 topics_filename <- sprintf(paste0(filename,"_topics_%d.txt"), topic_num)
-write.table(topics, file=topics_filename, sep="?t", quote=FALSE, row.names=FALSE, col.names=FALSE, fileEncoding="UTF-8")
+write.table(topics, file=topics_filename, sep="\t", quote=FALSE, row.names=FALSE, col.names=FALSE, fileEncoding="UTF-8")
