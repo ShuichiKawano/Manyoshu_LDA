@@ -33,7 +33,7 @@ for(i in 1:topic_num){
   Onin_dist <- cbind(Onin_dist, names(sorted_terms), sorted_terms)
 }
 terms_filename <- sprintf(paste0(filename, "_terms_%d.txt"), topic_num)
-write.table(Onin_dist, file=terms_filename, sep="?t", quote=FALSE, row.names=FALSE, col.names=FALSE, fileEncoding="CP932")
+write.table(Onin_dist, file=terms_filename, sep="\t", quote=FALSE, row.names=FALSE, col.names=FALSE, fileEncoding="CP932")
 
 ######################################################
 # Write On-in distribution in each topic
