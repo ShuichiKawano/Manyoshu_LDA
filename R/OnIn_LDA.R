@@ -6,7 +6,6 @@
 # Load library 
 ######################################################
 library(topicmodels)
-#library(ldatuning)
 
 ######################################################
 # Load dataset
@@ -21,8 +20,7 @@ Data[is.na(Data)] <- 0
 ######################################################
 topic_num <- 9 # the number of topics
 filename <- "result"
-#lda <- LDA(Data, k=topic_num, method="Gibbs", control= list(burnin=200000, iter = 1000000))
-lda <- LDA(Data, k=topic_num, method="Gibbs", control= list(burnin=200, iter = 1000))
+lda <- LDA(Data, k=topic_num, method="Gibbs", control= list(burnin=200000, iter = 1000000))
 lda_inf <- posterior(lda, Data)
 
 ######################################################
